@@ -1,8 +1,9 @@
 import { createReducer, on } from '@ngrx/store'
+import { Usuario } from '../../models';
 import { cargarUsuario, cargarUsuarioError, cargarUsuarioExito } from "../actions";
 
 export interface UsuariosState {
-    users: [],
+    users: Array<Usuario>,
     loaded: boolean,
     loading: boolean,
     error: any
