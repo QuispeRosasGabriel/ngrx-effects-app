@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-usuario',
@@ -8,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuarioComponent implements OnInit {
 
-  constructor() { }
+  public constructor(private readonly router: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.router.params.subscribe(({id}) => console.log(id))
   }
 
 }
