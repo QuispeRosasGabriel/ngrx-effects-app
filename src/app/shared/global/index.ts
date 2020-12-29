@@ -1,0 +1,1 @@
+export { REQRESBASE } from './baseUrl';

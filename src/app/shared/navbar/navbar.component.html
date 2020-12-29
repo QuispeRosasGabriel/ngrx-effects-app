@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">NGRX Effects</a>
+      <a class="navbar-brand" routerLink="['/home']" routerLinkActive="router-link-active" >NGRX Effects</a>
   
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link active" aria-current="page" routerLink="['/home']">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Usuarios</a>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/usuarios">Usuarios</a>
           </li>
          </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-success">Buscar</button>
+          <input #txtInput (keyup)="goUser(txtInput.value)" class="form-control me-2" type="search" placeholder="Search">
+          <button (click)="goUser(txtInput.value)" class="btn btn-outline-success">Buscar</button>
         </form>
       </div>
     </div>
