@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { cargarUsuario } from 'src/app/store/actions';
+import { AppState } from 'src/app/store/app.reducer';
 
 @Component({
   selector: 'app-lista',
@@ -11,9 +14,10 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class ListaComponent implements OnInit {
 
   public usuarios: Usuario;
-  public constructor() { }
+  public constructor(private readonly store: Store<AppState>) { }
 
   public ngOnInit(): void {
+    this.store.dispatch(cargarUsuario())
   }
 
 }
