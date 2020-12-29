@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from 'src/app/services/usuario.service';
-import { cargarUsuario } from 'src/app/store/actions';
+import { cargarUsuario, cargarUsuarios } from 'src/app/store/actions';
 import { AppState } from 'src/app/store/app.reducer';
 
 @Component({
@@ -29,7 +29,7 @@ export class ListaComponent implements OnInit {
       this.error = error;
     });
 
-    this.store.dispatch(cargarUsuario())
+    this.store.dispatch(cargarUsuarios())
   }
 
 }
