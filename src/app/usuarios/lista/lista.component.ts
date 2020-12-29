@@ -14,6 +14,8 @@ import { AppState } from 'src/app/store/app.reducer';
 export class ListaComponent implements OnInit {
 
   public usuarios: Array<Usuario>;
+  public loading: boolean; 
+  public error: any;
   public constructor(private readonly store: Store<AppState>) { }
 
   public ngOnInit(): void {
@@ -21,7 +23,12 @@ export class ListaComponent implements OnInit {
   }
 
   private getUsersFromStore(): void {
-    this.store.select('usuarios').subscribe(({users}) => this.usuarios = users)
+    this.store.select('usuarios').subscribe(({users, loading, error}) => {
+      this.usuarios = users;
+      this.loading = loading;
+      this.error = error;
+    });
+
     this.store.dispatch(cargarUsuario())
   }
 
