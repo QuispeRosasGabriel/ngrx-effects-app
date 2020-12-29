@@ -13,10 +13,15 @@ import { AppState } from 'src/app/store/app.reducer';
 })
 export class ListaComponent implements OnInit {
 
-  public usuarios: Usuario;
+  public usuarios: Array<Usuario>;
   public constructor(private readonly store: Store<AppState>) { }
 
   public ngOnInit(): void {
+    this.getUsersFromStore();
+  }
+
+  private getUsersFromStore(): void {
+    this.store.select('usuarios').subscribe(({users}) => this.usuarios = users)
     this.store.dispatch(cargarUsuario())
   }
 
