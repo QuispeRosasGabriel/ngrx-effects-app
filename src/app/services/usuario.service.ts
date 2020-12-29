@@ -16,7 +16,7 @@ export class UsuarioService {
           );
   }
 
-  public getUserById(id: string) {
+  public getUserById(id) {
     return this.http.get(`${REQRESBASE}/users/${id}`)
           .pipe(
             map((resp) =>  resp['data'])

@@ -11,7 +11,7 @@ export interface UsuarioState {
 }
 
 export const usuarioInitialState: UsuarioState = {
-    id: 'null',
+    id: null,
     user: null,
     loaded: false,
     loading: false,
