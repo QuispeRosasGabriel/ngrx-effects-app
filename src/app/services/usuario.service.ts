@@ -15,4 +15,11 @@ export class UsuarioService {
             map((resp) =>  resp['data'])
           );
   }
+
+  public getUserById(id: string) {
+    return this.http.get(`${REQRESBASE}/users/${id}`)
+          .pipe(
+            map((resp) =>  resp['data'])
+          );
+  }
 }
