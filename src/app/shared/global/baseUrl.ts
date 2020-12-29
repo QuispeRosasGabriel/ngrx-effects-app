@@ -1,1 +1,1 @@
-export const REQRESBASE = 'https://reqres.in/api/';
+export const REQRESBASE = 'https://reqres.in/api';
