@@ -1,0 +1,1 @@
+export {storeConfig} from './store.config';
